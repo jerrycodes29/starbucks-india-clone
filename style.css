@@ -14,14 +14,16 @@ a {
 li {
   list-style: none;
 }
-.header {
+header {
+  box-shadow: #1c1c1c1c 1px 1px 2px;
+}
+.header,
+.header > div {
   align-items: center;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   gap: 1.75rem;
   justify-content: space-between;
-  box-shadow: #1c1c1c1c 1px 1px 2px;
 }
 .header__logo {
   width: 2.5rem;
@@ -62,8 +64,29 @@ li {
   border: 1px solid black;
   outline: 0;
 }
+.header__accountlogo {
+  width: 2rem;
+}
 @media (min-width: 992px) {
-  .header {
+  .header,
+  .header > div {
     flex-direction: row;
+    margin: auto;
+    max-width: 1024px;
+    padding: 1rem;
+  }
+  .header > div {
+    gap: 3.5rem;
+    justify-items: baseline;
+    padding: 0;
+  }
+}
+@media (min-width: 1444px) {
+  .header,
+  .header > div {
+    max-width: 1286px;
+  }
+  .header__nav {
+    flex-grow: 4;
   }
 }
